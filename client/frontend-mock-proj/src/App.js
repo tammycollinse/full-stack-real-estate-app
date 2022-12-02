@@ -5,11 +5,11 @@ import React , {useState , useEffect} from "react";
 
 function App() { 
   
-  useEffect(() => { //useEffect syntax, fetching our data can come
-   fetch("http://localhost:3000/listings")
-   .then(response => response.json())
-   .then(data => console.log(data))
-  })
+  // useEffect(() => { //useEffect syntax, fetching our data can come
+  //  fetch("http://localhost:3000/listings")
+  //  .then(response => response.json())
+  //  .then(data => console.log(data))
+  // })
 
   function loginUser(){
     //this will hold our login form
@@ -23,8 +23,9 @@ function App() {
         <h1>our login buttons will go over here</h1>
       </div>
 
-     <div id="header">
+     <div className="header">
       <h1>This will be our header page</h1>
+
      </div>
 
      <div className="search-banner">
@@ -33,6 +34,11 @@ function App() {
 
      <div className="featured-homes-container">
       <h1>This is where our featured homes will go</h1>
+      <h2>    I need to test this styling to see what is going to happen</h2>
+     </div>
+     
+     <div className="footer">
+
      </div>
     </div>
   );

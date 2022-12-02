@@ -7,6 +7,58 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* this is the landing page layout and structure */
+
+.header {
+  border:2px red;
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 32px;
+}
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.search-banner  {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  background-color: orange;
+}
+
+/* Links - change color on hover */
+.search-banner a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.featured-homes-container {
+  background-color: gray; 
+  color: white;
+  flex-grow: 1;
+  object-fit: fill;
+
+
+
+  /* the above needs to be adjusted to fit the rest of the div content */
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

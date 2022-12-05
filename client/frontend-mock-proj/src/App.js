@@ -1,15 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 import React , {useState , useEffect} from "react";
+import Listings from './Listings';
+import Agents from "./Agents"
 
 
 function App() { 
+
+  const [listingsData, setListingsData] = useState([])
+  const [agentsData , setAgentsData] = useState([])
+
+  function getAgentsData(){
+    fetch("http://localhost:3000/agents")
+    .then(response => response.json())
+    .then(data => {
+      setAgentsData(data)
+      console.log(agentsData)
+    })
+  }
   
-  // useEffect(() => { //useEffect syntax, fetching our data can come
-  //  fetch("http://localhost:3000/listings")
-  //  .then(response => response.json())
-  //  .then(data => console.log(data))
-  // })
+  useEffect(() => { //useEffect syntax, fetching our data can come
+   fetch("http://localhost:3000/listings")
+   .then(response => response.json())
+   .then(data => setListingsData(data))
+  }, [])
+
+  console.log("this is the data coming from the fetch in the app component" + listingsData) //this is not setting state, why???
+
 
   function loginUser(){
     //this will hold our login form
@@ -24,7 +41,7 @@ function App() {
       </div>
 
      <div className="header">
-      <h1>This will be our header page</h1>
+      <h1 onClick={getAgentsData}>This will be our header page</h1>
 
      </div>
 
@@ -33,6 +50,7 @@ function App() {
      </div>
 
      <div className="featured-homes-container">
+     <Listings listingsData={listingsData}/>
       <h1>This is where our featured homes will go</h1>
       <h2>    I need to test this styling to see what is going to happen</h2>
      </div>
@@ -40,7 +58,9 @@ function App() {
      <div className="footer">
 
      </div>
+     
     </div>
+    
   );
 }
 

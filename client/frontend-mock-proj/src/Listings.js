@@ -1,5 +1,12 @@
-function Listings(){
+import ListingsCard from "./ListingsCard";
+
+function Listings({listingsData}){ //this is going to render listings that is going to render listings card
+    
     return (
-        <h1>This is our listings component</h1>
+     <div>
+        <ListingsCard listingsData={listingsData}/>
+     </div>
     )
 }
+
+export default Listings;

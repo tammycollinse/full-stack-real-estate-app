@@ -18,14 +18,32 @@ function App() {
       console.log(agentsData)
     })
   }
+
+  //agents data in a use effect for testing
+
+  useEffect(()=>{
+    fetch("http://localhost:3000/agents")
+    .then(response => response.json())
+    .then(data => 
+      setAgentsData(data))
+      console.log(agentsData)
+  }, [])
+
+  // function getListingsData(){
+  //   fetch("http://localhost:3000/listings")
+  //     .then(response => response.json())
+  //     .then(data => setListingsData(data))
+  //     console.log(listingsData)
+  // }
   
   useEffect(() => { //useEffect syntax, fetching our data can come
    fetch("http://localhost:3000/listings")
    .then(response => response.json())
    .then(data => setListingsData(data))
+   console.log(listingsData)
   }, [])
 
-  console.log("this is the data coming from the fetch in the app component" + listingsData) //this is not setting state, why???
+ // console.log("this is the data coming from the fetch in the app component" + listingsData) //this is not setting state, why???
 
 
   function loginUser(){
@@ -46,7 +64,7 @@ function App() {
      </div>
 
      <div className="search-banner">
-      <h1>This is where our search items/tools are going to our</h1>
+      <h1 >This is where our search items/tools are going to our</h1>
      </div>
 
      <div className="featured-homes-container">
